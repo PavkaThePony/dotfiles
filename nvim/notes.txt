@@ -1,0 +1,19 @@
+install rust-analyzer via rustup and learn rust
+
+GARRY'S MOD DEVELOPMENT:
+for gmod development i create .luarc.json file in the addon project root with these contents:
+note: USE UNIX SLASHES!
+<JSON>
+{
+"$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+"runtime.version": "LuaJIT",
+"runtime.special": {
+    "IncludeCS": "dofile",
+    "include": "dofile"
+},
+"runtime.nonstandardSymbol": ["!", "!=", "&&", "||", "//", "/**/", "continue"],
+"workspace.library": ["absolute/path/to/glua-api-snippets/library"],
+"workspace.checkThirdParty": false
+}
+</JSON>
+I also have to make sure I use the latest glua snippets, so once a month i should fetch latest changes via git
