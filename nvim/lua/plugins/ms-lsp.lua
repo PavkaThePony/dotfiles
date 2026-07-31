@@ -37,7 +37,7 @@ return {
          callback = function(event)
            -- This table ensures the keymaps work only in the current buffer where lsp was attached
            local opts = { buffer = event.buf }
-           -- KD: Show documentation/hover window. 
+           -- KD: Show documentation/hover window. Do KD again when docs are opened to jump into them. Use :q to quit. 
            vim.keymap.set('n', 'KD', vim.lsp.buf.hover, opts)
 
            -- K: Show error/warning/message from LS (in a floating window)
