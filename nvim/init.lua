@@ -35,6 +35,9 @@ vim.opt.softtabstop = -1    -- softtabstop will use shiftwidth if set to -1, thi
 vim.diagnostic.config({ severity_sort = true })
 -- scheduling the synchronisation between OS clipboard and nvim for faster startup time
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
+-- make sure i have signcolumn always on, so lsp won't indent my whole screen when it wants to show me an E or W or whatever symbol on the left when
+-- it finishes diagnostics
+vim.o.signcolumn = "yes"
 
 -- requiring other configuration files
 require("keymaps")
@@ -42,4 +45,3 @@ require("autocmds")
 require("treesitter-setup")
 -- lazy.nvim!
 require("lazyconfig.lazy")
-
