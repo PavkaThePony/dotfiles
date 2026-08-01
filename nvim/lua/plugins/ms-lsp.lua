@@ -49,7 +49,7 @@ return {
            -- <leader>rn: Smart Rename (renames variable project-wide aka non-destructive refactoring)
            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
-           -- <leader>ca: Code Actions (Triggers automatic fixes suggested by language server)
+           -- <leader>a: Code Actions (Triggers automatic fixes suggested by language server)
            vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts)
 
            -- Telecope integrations
