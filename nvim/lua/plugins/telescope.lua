@@ -8,6 +8,6 @@ return {
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Open Tabs/Buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Search Help Manual" },
   },
-  cmd = 'Telescope', -- load on command due to the fact that i frequently use via :Telescope command
+  lazy = false, -- screw this, load telescope in the beginning
 }
 
