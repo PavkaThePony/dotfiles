@@ -2,5 +2,6 @@
 ### Contains configs for:
 - nvim
 - wezterm
+- nushell
 
 I use symlinking to make it work from one directory. No automatic script yet though.
