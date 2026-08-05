@@ -4,11 +4,11 @@ return {
 
   --wiki: Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons", config = true }, --wiki: use if you prefer nvim-web-devicons Note: yes i do lol
-  
+
   keys = {
-    { "-", "<cmd>Oil<cr>", "Open ~Emacsy Direddy style file manager~" }, 
+    { "-", "<cmd>Oil<cr>", "Open ~Emacsy Direddy style file manager~" },
   },
-  
+
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
@@ -25,7 +25,7 @@ return {
       ["<leader>cd"] = function()
         local oil = require('oil')
         local current_oil_dir = oil.get_current_dir()
-        if current_oil_dir then 
+        if current_oil_dir then
           vim.cmd("cd " .. current_oil_dir)
           vim.notify("Root changed to: " .. current_oil_dir, vim.log.levels.INFO)
         else

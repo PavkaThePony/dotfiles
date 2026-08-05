@@ -1,8 +1,8 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "hrsh7th/cmp-buffer", 
-    "L3MON4D3/LuaSnip", 
+    "hrsh7th/cmp-buffer",
+    "L3MON4D3/LuaSnip",
     "onsails/lspkind.nvim", -- lspkind for better completion menu
   },
   config = function()
@@ -17,7 +17,7 @@ return {
     cmp.setup({
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body) 
+          luasnip.lsp_expand(args.body)
         end,
       },
       -- Boilerplate is over, this is the config that needs attention.
@@ -28,9 +28,12 @@ return {
         -- These are must-have lines
         ["<C-w>"] = cmp.mapping.complete(), -- open completion menu
         ["<C-e>"] = cmp.mapping.abort(),        -- Close completion menu
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept item (pay attention to 'select', if it's set to true, then
+        ["<CR>"] = cmp.mapping.confirm({ select = true, behaviour = cmp.ConfirmBehavior.Replace }), -- Accept item (pay attention to 'select', if it's set to true, then
         -- even if i dont explicitly type <Tab> to select an item from popup menu, it will select and accept the first item anyway)
-        
+        -- cmp.ConfirmBehavior.Replace works like this:
+        -- if I have an old variable like twilight_spa, and I place cursor after twilight, select twilight_sparkle from the menu, and confirm, 
+        -- it overwrites the rest and becomes twilight_sparkle (instead of twilight_sparkle_spa);
+
         -- Tab and Shift-Tab to select through options
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -57,9 +60,9 @@ return {
       -- However, when in cmdline mode, or when the cursor is near the bottom of the screen, and the menu opens above the cursor, 
       -- it sometimes can be preferable if the menu used a bottom down approach
       -- let's enable that feature:
-      view = {                                                        
-        entries = { name = 'custom', selection_order = 'near_cursor' } 
-      }, 
+      view = {
+        entries = { name = 'custom', selection_order = 'near_cursor' }
+      },
       -- lspkind is cool, and it makes the completion menu look better.
       formatting = {
         fields = { 'abbr', 'icon', 'kind', 'menu' },
@@ -74,4 +77,4 @@ return {
       },
     })
   end,
-} 
+}
