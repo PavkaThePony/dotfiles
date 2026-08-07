@@ -62,6 +62,10 @@ return {
 
            -- gi: Go to Implementation (finds classes that implement an interface, or in short, hello java!)
            vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', opts)
+
+           -- fs: Find Symbols (opens telescope's lsp_document_symbols to search for different definitions for different keywords or variables or functions
+           -- to quickly jump to them)
+           vim.keymap.set('n', 'fs', '<cmd>Telescope lsp_document_symbols<cr>', opts)
       end,
     })
   end,
