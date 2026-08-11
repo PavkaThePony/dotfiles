@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 -- disable system's beep sound
 config.audible_bell = 'Disabled'
 config.color_scheme = 'tokyonight_night'
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 config.window_decorations = 'RESIZE'
 --config.win32_system_backdrop = "Acrylic" -- doesnt look very cool
 config.use_fancy_tab_bar = false

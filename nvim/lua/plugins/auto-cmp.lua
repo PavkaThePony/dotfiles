@@ -26,8 +26,13 @@ return {
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         -- These are must-have lines
-        ["<C-w>"] = cmp.mapping.complete(), -- open completion menu
-        ["<C-e>"] = cmp.mapping.abort(),        -- Close completion menu
+        ["<C-e>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.abort() -- close autocomplete menu
+          else
+            cmp.complete() -- open autocomplete menu
+          end
+        end, { "i", "s" }),
         ["<CR>"] = cmp.mapping.confirm({ select = true, behaviour = cmp.ConfirmBehavior.Replace }), -- Accept item (pay attention to 'select', if it's set to true, then
         -- even if i dont explicitly type <Tab> to select an item from popup menu, it will select and accept the first item anyway)
         -- cmp.ConfirmBehavior.Replace works like this:
