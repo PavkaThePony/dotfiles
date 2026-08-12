@@ -72,7 +72,7 @@ return {
       formatting = {
         fields = { 'abbr', 'icon', 'kind', 'menu' },
         format = lspkind.cmp_format({
-          show_labelDetails = true,
+          show_labelDetails = false,
           menu = { -- i must specify how different sources are displayed
             buffer = "[Buffer]",
             brony = "[Brony]",

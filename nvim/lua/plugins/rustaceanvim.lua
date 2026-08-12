@@ -6,6 +6,4 @@ return {
   -- This plugin implements proper lazy-loading (see :h lua-plugin-lazy).
   -- No need for lazy.nvim to lazy-load it.
   lazy = false,
-  -- For the time being I am learning with Rustlings, rust-analyzer shouldn't bother me
-  enabled = false,
 }
