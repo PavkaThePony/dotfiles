@@ -5,6 +5,12 @@ Hosting-Minecraft.pro
 
                                                                Author: Pavka
                                                 Last time edited: 28.08.2026
+==============================================================================
+CONTENTS                      *cleanroom-remote-hosting-installation-contents*
+
+1. Introduction                                      |cleanroom-hosting-intro|
+2. Setup                                             |cleanroom-hosting-setup|
+3. Outro                                             |cleanroom-hosting-outro|
 
 ==============================================================================
 1. INTRODUCTION                                      *cleanroom-hosting-intro*
@@ -76,7 +82,7 @@ Remote Hosting ~
 1. Launch the server.
 
 ==============================================================================
-3. OUTRO                                       *cleanroom-hosting-setup-outro*
+3. OUTRO                                       *cleanroom-hosting-outro*
 
 I've spent half of the day trying to figure out how Hosting-Minecraft.pro
 handles the server setup to be able to write this vimdoc.
