@@ -1,0 +1,90 @@
+*cleanroom-remote-hosting-installation.txt* 
+
+Guide on installing a CleanroomMC modpack on a remote hosting called 
+Hosting-Minecraft.pro
+
+                                                               Author: Pavka
+                                                Last time edited: 28.08.2026
+
+==============================================================================
+1. INTRODUCTION                                      *cleanroom-hosting-intro*
+
+CleanroomMC is a beautiful continuation of minecraft 1.12.2 modding life.
+This thing is very good and is mandatory for playing modern 1.12.2 modpacks.
+
+What it adds ~
+
+- Java 25 support
+- Beautiful website with explanations on how to modernize your modpack
+- Allows a new scripting language(groovy) into the game
+
+This vimdoc will help you with setting up CleanroomMC for
+Minecraft-Hosting.pro (Russian minecraft hosting)
+
+What you should know ~
+
+Not all hostings work the same way. Hosting-Minecraft.pro utilizes
+a control panel similar to Pterodactyl(If I remember correctly).
+Hostings can also utilize different methods on launching a server, thus this
+guide will probably only work for Hosting-Minecraft.pro. I will add more
+hostings if I ever need to, or you can just submit a pull request to my
+dotfiles repository, if you want to :)
+
+==============================================================================
+2. SETUP                                             *cleanroom-hosting-setup*
+
+Local Machine ~
+
+1. Install cleanroom-[version_name]-installer.jar
+2. Run the installer, select "install server" and check "Server starter jar"
+3. Select an empty folder(for example, `cleanroom`) and run the installer, 
+   cleanroom files will appear in the folder
+
+Remote Hosting ~
+
+(Most buttons on the hosting are in Russian, but I will use English in this
+doc file so it can be read by anything that only supports ASCII)
+
+1. Go to `Versions`
+2. Select `Forge` and from `Available Versions` select `1.12.2`
+3. Install the server.
+
+Local Machine ~
+
+1. Connect to the server using SFTP(guide is on the hosting website).
+2. Copy all server files to a new different directory on your local machine
+   (for example, server-files).
+3. Drop all contents of your cleanroom server files directory into the
+   server files directory (for example, `cleanroom` -> `server-files`)
+   and overwrite everything.
+4. Find the cleanroom jar launcher in the `libraries/` dir.
+   It is located in `libraries/com/cleanroommc/cleanroom/[version_name]/`
+   (for example, the name of the jar file can be `cleanroom-0.6.11-alpha.jar`)
+5. Create a file named run.sh and write the following bash script into it: >sh
+   exec java -jar libraries/com/cleanroommc/cleanroom/[version_name]/cleanroom-[version_name].jar "$@"
+<
+   Important: the name of the cleanroom jar file and the dir it is 
+   located in will be unique to you since it contains the version 
+   name of the cleanroom launcher (for example, full path to the jar
+   file can be named `libraries/com/cleanroommc/cleanroom/0.6.11-alpha/cleanroom-0.6.11-alpha.jar`)
+6. Just to be sure, wipe all files from the server root using SFTP
+7. Transfer all files to the hosting root using SFTP
+8. Install `Fugue` and `Scalar Legacy` for the server.
+
+Remote Hosting ~
+
+1. Launch the server.
+
+==============================================================================
+3. OUTRO                                       *cleanroom-hosting-setup-outro*
+
+I've spent half of the day trying to figure out how Hosting-Minecraft.pro
+handles the server setup to be able to write this vimdoc.
+As you can see, the solution is rather simple and easy to understand, and I
+hope you will find it helpful in your attempt to play with CleanroomMC on
+Minecraft-Hosting.pro.
+
+If there's any other hosting you would like to see here, you can help me by
+contributing! Have fun playing CleanroomMC, and 1.12.2 won't die :)
+
+vim:tw=78:ts=2:et:ft=help:norl:
