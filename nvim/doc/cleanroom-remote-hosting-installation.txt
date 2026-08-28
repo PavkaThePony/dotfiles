@@ -25,7 +25,7 @@ What it adds ~
 - Allows a new scripting language(groovy) into the game
 
 This vimdoc will help you with setting up CleanroomMC for
-Minecraft-Hosting.pro (Russian minecraft hosting)
+Hosting-Minecraft.pro (Russian minecraft hosting)
 
 What you should know ~
 
@@ -88,7 +88,7 @@ I've spent half of the day trying to figure out how Hosting-Minecraft.pro
 handles the server setup to be able to write this vimdoc.
 As you can see, the solution is rather simple and easy to understand, and I
 hope you will find it helpful in your attempt to play with CleanroomMC on
-Minecraft-Hosting.pro.
+Hosting-Minecraft.pro.
 
 If there's any other hosting you would like to see here, you can help me by
 contributing! Have fun playing CleanroomMC, and 1.12.2 won't die :)
