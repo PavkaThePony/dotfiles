@@ -72,7 +72,9 @@ Local Machine ~
    Important: the name of the cleanroom jar file and the dir it is 
    located in will be unique to you since it contains the version 
    name of the cleanroom launcher (for example, full path to the jar
-   file can be named `libraries/com/cleanroommc/cleanroom/0.6.11-alpha/cleanroom-0.6.11-alpha.jar`)
+   file can be named `libraries/com/cleanroommc/cleanroom/0.6.11-alpha/cleanroom-0.6.11-alpha.jar`).
+   You can also add -XX:+UseCompactObjectHeaders in case you are on java 25
+   so java eats less memory.
 6. Just to be sure, wipe all files from the server root using SFTP
 7. Transfer all files to the hosting root using SFTP
 8. Install `Fugue` and `Scalar Legacy` for the server.
