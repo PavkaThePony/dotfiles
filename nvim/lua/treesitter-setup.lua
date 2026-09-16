@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 -- languages which i have a parser and a query for:
-local language_filetype_list = { "c", "lua", "vim", "markdown", "json", "rust", }
+local language_filetype_list = { "c", "lua", "vim", "markdown", "json", "rust", "python", }
 
 -- the autocmd to launch the treesitter:
 autocmd({ "FileType" }, {
