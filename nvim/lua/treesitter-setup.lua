@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 -- languages which i have a parser and a query for:
-local language_filetype_list = { "c", "lua", "vim", "markdown", "json", "rust", "python", }
+local language_filetype_list = { "c", "lua", "vim", "markdown", "json", "rust", "python", "html", "css" }
 
 -- the autocmd to launch the treesitter:
 autocmd({ "FileType" }, {
@@ -9,7 +9,7 @@ autocmd({ "FileType" }, {
   callback = function()
     local lang = vim.bo.filetype
     local has_parser = pcall(vim.treesitter.get_parser, 0, lang)
-    
+
     if has_parser then
       vim.treesitter.start()
     end

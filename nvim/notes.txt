@@ -17,3 +17,6 @@ note: USE UNIX SLASHES!
 }
 </JSON>
 I also have to make sure I use the latest glua snippets, so once a month i should fetch latest changes via git
+
+===
+I noticed that if I type ":! start ." then it opens the explorer in the folder where my current file I am working with in nvim exists
